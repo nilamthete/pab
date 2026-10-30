@@ -1142,6 +1142,20 @@ export default function App() {
         <div className="hero-bg-overlay" aria-hidden="true"></div>
 
         <div className="hero-container">
+          {/* Mobile-Only Top Stage Photo Banner (Hidden on Desktop) */}
+          <div className="hero-mobile-stage-banner" aria-label="Mr. Prashant Ashok Bachhav on stage">
+            <img
+              src="/hero-bg.png"
+              alt="Mr. Prashant Ashok Bachhav speaking at ICMAI on stage"
+              className="hero-mobile-stage-img"
+              loading="eager"
+            />
+            <div className="hero-mobile-stage-gradient" aria-hidden="true"></div>
+            <div className="hero-mobile-stage-pill" aria-hidden="true">
+              <span>Director • Aarya Innovtech</span>
+            </div>
+          </div>
+
           {/* Executive Information Column */}
           <div className="hero-text-column">
             {/* Main heading */}
