@@ -4811,16 +4811,16 @@
     justify-content: flex-start !important;
   }
 
-  /* Full Screen Hero Photo Background on Mobile — Centered & Crystal Clear */
+  /* Full Screen Hero Photo Background on Mobile */
   .hero-section.hero-with-bg::before {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
     background-image: url('/hero-bg.png') !important;
     background-repeat: no-repeat !important;
-    background-position: 55.5% 10% !important;
+    background-position: 70% top !important;
     background-size: cover !important;
-    filter: brightness(1.06) contrast(1.06) saturate(1.05) !important;
+    filter: brightness(0.80) contrast(1.08) saturate(1.06) !important;
     opacity: 1 !important;
     transform: none !important;
     z-index: 0 !important;
@@ -4830,18 +4830,24 @@
     display: none !important;
   }
 
-  /* Balanced Vignette Overlay — Contrast-rich top for text, Crystal Clear in center for Mr. Bachhav */
+  /* Left-to-Right & Top-to-Bottom Gradient Overlay for Crystal Clear Text */
   .hero-bg-overlay {
     position: absolute !important;
     inset: 0 !important;
     background: 
       linear-gradient(
+        to right,
+        rgba(14, 16, 19, 0.95) 0%,
+        rgba(14, 16, 19, 0.88) 45%,
+        rgba(14, 16, 19, 0.55) 75%,
+        rgba(14, 16, 19, 0.25) 100%
+      ),
+      linear-gradient(
         180deg,
-        rgba(14, 16, 19, 0.68) 0%,
-        rgba(14, 16, 19, 0.35) 20%,
-        rgba(14, 16, 19, 0.10) 42%,
-        rgba(14, 16, 19, 0.30) 72%,
-        rgba(14, 16, 19, 0.88) 100%
+        rgba(14, 16, 19, 0.40) 0%,
+        transparent 20%,
+        transparent 60%,
+        rgba(14, 16, 19, 0.92) 100%
       ) !important;
     z-index: 1 !important;
     pointer-events: none !important;
@@ -4874,18 +4880,18 @@
     z-index: 4 !important;
   }
 
-  /* Full Name Heading — INCREASED SIZE AS REQUESTED */
+  /* Full Name Heading — Single Line & High Contrast */
   .hero-main-heading {
-    white-space: normal !important;
-    font-size: clamp(1.42rem, 6.0vw, 1.85rem) !important;
-    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    font-size: clamp(1.18rem, 5.0vw, 1.58rem) !important;
+    line-height: 1.25 !important;
     letter-spacing: -0.01em !important;
     text-align: left !important;
     margin-bottom: 8px !important;
     max-width: 100% !important;
     color: #FFFFFF !important;
-    font-weight: 850 !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.9) !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95) !important;
   }
 
   /* Badge — Single Line Gold Border */
@@ -4936,10 +4942,10 @@
     font-family: var(--font-sans) !important;
     font-size: clamp(0.78rem, 2.4vw, 0.86rem) !important;
     line-height: 1.5 !important;
-    color: #F1F5F9 !important;
+    color: #E2E8F0 !important;
     margin: 0 0 16px 0 !important;
     text-align: left !important;
-    max-width: 90% !important;
+    max-width: 100% !important;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95) !important;
   }
 
@@ -4949,7 +4955,7 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px !important;
     width: 100% !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 18px !important;
   }
 
   .highlight-card {
@@ -5013,40 +5019,34 @@
     overflow: hidden !important;
   }
 
-  /* Two CTA Buttons — Stacked with Dedicated 12px Gap to Prevent Any Overlap */
+  /* Compact side-by-side touch-friendly CTA buttons */
   .hero-cta-group {
     display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
+    flex-direction: row !important;
+    align-items: center !important;
     width: 100% !important;
-    gap: 12px !important;
-    margin-top: 6px !important;
-    margin-left: 0 !important;
+    gap: 10px !important;
+    margin-top: 4px !important;
   }
 
   .btn-primary-gold,
   .btn-secondary-maroon {
-    width: 100% !important;
-    height: 44px !important;
-    min-height: 44px !important;
-    display: flex !important;
-    align-items: center !important;
+    flex: 1 1 50% !important;
+    min-width: 0 !important;
+    width: auto !important;
+    height: 40px !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    padding: 0 10px !important;
+    border-radius: 8px !important;
+    gap: 6px !important;
     justify-content: center !important;
-    padding: 0 16px !important;
-    font-size: 0.82rem !important;
-    font-weight: 750 !important;
-    border-radius: 9px !important;
-    box-sizing: border-box !important;
-    gap: 8px !important;
-    text-decoration: none !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
   }
 
   .btn-primary-gold svg,
   .btn-secondary-maroon svg {
-    width: 16px !important;
-    height: 16px !important;
-    flex-shrink: 0 !important;
+    width: 14px !important;
+    height: 14px !important;
   }
 
   .btn-primary-gold span,
@@ -5155,10 +5155,6 @@
 
 /* Extra Small Phones (<= 480px) */
 @media (max-width: 480px) {
-  .hero-section.hero-with-bg::before {
-    background-position: 55.5% 10% !important;
-  }
-
   .hero-highlights-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -5197,49 +5193,48 @@
   }
 
   .hero-main-heading {
-    white-space: normal !important;
-    font-size: clamp(1.35rem, 5.8vw, 1.70rem) !important;
-    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    font-size: clamp(1.10rem, 4.8vw, 1.45rem) !important;
+    line-height: 1.25 !important;
   }
 
   .hero-intro-label {
-    padding: 3px 8px !important;
+    padding: 2px 6px !important;
   }
 
   .label-text {
-    font-size: 0.54rem !important;
+    font-size: 0.50rem !important;
   }
 
   .hero-tagline {
-    font-size: 0.74rem !important;
+    font-size: 0.70rem !important;
   }
 
   .hero-cta-group {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
+    flex-direction: row !important;
+    gap: 6px !important;
     width: 100% !important;
-    margin-top: 6px !important;
-    margin-left: 0 !important;
-    align-items: stretch !important;
+    margin-top: 4px !important;
   }
 
   .btn-primary-gold,
   .btn-secondary-maroon {
-    width: 100% !important;
-    height: 42px !important;
-    min-height: 42px !important;
-    font-size: 0.80rem !important;
-    padding: 0 12px !important;
-    border-radius: 8px !important;
+    flex: 1 1 50% !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 36px !important;
+    font-size: 0.70rem !important;
+    padding: 0 6px !important;
+    border-radius: 6px !important;
+    gap: 4px !important;
     justify-content: center !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
   }
 
   .btn-primary-gold svg,
   .btn-secondary-maroon svg {
-    width: 15px !important;
-    height: 15px !important;
+    width: 12px !important;
+    height: 12px !important;
   }
 
   .navbar-cta-btn {
